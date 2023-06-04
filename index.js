@@ -1,7 +1,7 @@
 const { Telegraf } = require("telegraf");
 
 const { connectClient, getUserList, addAnimeToList, removeAnimeFromList, switchLanguage, getUserLanguage } = require("./db.js");
-const { digitCount, escape, getCommandArgument, getCommandArgumentId, getLocalizedString, replyWithLocalizedString } = require("./util.js");
+const { digitCount, escape, getCommandArgument, getCommandArgumentId, getLocalizedString, replyWithLocalizedString, delay } = require("./util.js");
 const { search, getAnimeById } = require("./api.js");
 
 async function main() {
