@@ -1,5 +1,3 @@
-const { delay } = require('./util.js');
-
 const { createClient } = require("redis");
 const client = createClient({
     url: process.env.REDIS_URL
@@ -57,6 +55,10 @@ async function setUserLanguage(id, language) {
     let data = await getUserData(id);
     data.language = language;
     await setUserData(id, data);
+}
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
 
 async function switchLanguage(id) {
