@@ -5,8 +5,6 @@ const { digitCount, escape, getCommandArgument, getCommandArgumentId, getLocaliz
 const { search, getAnimeById } = require("./api.js");
 
 async function main() {
-    var ip = require("ip");
-    console.dir(ip.address());
     await connectClient();
     console.log("Client connected");
     const bot = new Telegraf(process.env.TELEGRAM_TOKEN_EDU);
@@ -16,20 +14,22 @@ async function main() {
     bot.help(async (ctx) => await replyWithLocalizedString(ctx, "HELP"));
 
     bot.command("search", async (ctx) => {
-        const query = getCommandArgument(ctx.message.text);
-        if (!query) { await replyWithLocalizedString(ctx, "EMPTY_QUERY"); return; }
+        try {
+            const query = getCommandArgument(ctx.message.text);
+            if (!query) { await replyWithLocalizedString(ctx, "EMPTY_QUERY"); return; }
 
-        const data = (await search(query)).slice(0, 5);
+            const data = (await search(query)).slice(0, 5);
 
-        let msg = "";
-        for (let i = 0; i < data.length; i++) {
-            const { title, url, mal_id } = data[i];
+            let msg = "";
+            for (let i = 0; i < data.length; i++) {
+                const { title, url, mal_id } = data[i];
 
-            const precedingZeroes = '0'.repeat(6 - digitCount(mal_id));
-            msg += `#${precedingZeroes}${mal_id}: [${title}]@(${url}@)\n`;
-        }
+                const precedingZeroes = '0'.repeat(6 - digitCount(mal_id));
+                msg += `#${precedingZeroes}${mal_id}: [${title}]@(${url}@)\n`;
+            }
 
-        await replyWithLocalizedString(ctx, "SEARCH_RESULTS", query, msg);
+            await replyWithLocalizedString(ctx, "SEARCH_RESULTS", query, msg);
+        } catch (e) { console.log(e); await replyWithLocalizedString(ctx, "SEARCH_ERROR"); }
     });
 
     bot.command("info", async (ctx) => {
