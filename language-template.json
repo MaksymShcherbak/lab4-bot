@@ -1,0 +1,32 @@
+{
+    "en": {
+        "GREETING": "Hi, {0}!\n\nI'm a bot that can construct a list of your favourite anime series. To view available commands, use /help.",
+        "HELP": "This bot can help you create a list of your favourite anime series.\n\n- To switch language to ukrainian, use /language\n- To search anime, use /search (e. g. /search one piece)\n- To get detailed information about a specific anime, use /info id (e.g. /info 020899)\n- To view you list of favourites, use /list\n- To add an anime to your list of favourites, use /add id (e.g. /add 020899)\n- To remove an anime from your list of favourites, use /remove id (e.g. /remove 020899)",
+        "EMPTY_QUERY": "Empty search query",
+        "SEARCH_RESULTS": "Search results for {0}:\n\n{1}\nTo see a detailed description of an anime, you can use the /info command. For example: /info 020899",
+		"ID_INVALID_OR_EMPTY": "Supplied anime id is invalid or empty",
+		"INFO": "[{0}]@({1}@)\nOriginal Title: {2}\nStudio: {3}\n\n@_{4}@_\n\nIf you want to add this anime to the list of your favorites, use the command /add {5}",
+		"CANT_FIND_ANIME_BY_ID": "Can't find an anime with the specified id. Perhaps the id you entered is invalid.",
+		"ADDED_TO_FAVOURITES": "{0} has been successfully added to your favourites. You can view your favorites with /list.",
+		"REMOVED_FROM_FAVOURITES": "{0} has been successfully removed from your favourites.",
+		"LIST": "Here's the list of your favourite anime series: \n\n{0}\nIf you want to remove an anime from the list, use the /remove command. For example: /remove 020899",
+		"LIST_ERROR": "An error has occured while loading the favourites list.",
+		"LANGUAGE": "Your language has been changed to: {0}",
+		"LANGUAGE_ERROR": "An error has occured while changing your preferred language."
+    },
+    "ua": {
+        "GREETING": "Привіт, {0}!\n\nЯ бот, що може побудувати список твоїх улюблених аніме. Для перегляду можливих команд використайте /help.",
+        "HELP": "Цей бот допоможе вам створити список улюблених аніме.\n\n- Щоб змінити мову на англійську, скористайтеся /language\n- Для пошуку аніме скористайтеся /search (наприклад, /search one piece)\n- Щоб отримати детальну інформацію про аніме, скористайтеся /info id (наприклад, /info 020899)\n- Щоб подивитися свій список улюблених аніме, скористайтеся /list\n- Щоб додати аніме в улюблене, скористайтеся /add id (наприклад, /add 020899)\n- Щоб прибрати аніме з улюбленого, скористайтеся /remove id (наприклад, /remove 020899)",
+        "EMPTY_QUERY": "Пустий запит",
+        "SEARCH_RESULTS": "Результати пошуку {0}:\n\n{1}\nЩоб побачити детальний опис аніме, скористайтеся /info. Наприклад, /info 020899",
+		"ID_INVALID_OR_EMPTY": "Ідентифікатор аніме не вказаний, або вказаний неправильно",
+		"INFO": "[{0}]@({1}@)\nОригінальна назва: {2}\nСтудія: {3}\n\n@_{4}@_\n\nЯкщо ви бажаєте додати це аніме до улюбленого, скористайтеся командою /add {5}",
+		"CANT_FIND_ANIME_BY_ID": "Не вдалося знайти аніме зі вказаним ідентифікатором. Можливо, вказаний ідентифікатор неправильний.",
+		"ADDED_TO_FAVOURITES": "{0} успішно додано до улюбленого. Ви можете подивитися свій список улюбленого, скориставшись /list.",
+		"REMOVED_FROM_FAVOURITES": "{0} було успішно видалено з улюбленого.",
+		"LIST": "Список вашого улюбленого аніме: \n\n{0}\nЯкщо ви бажаєте видалити аніме зі списку, скористайтеся /remove. Наприклад, /remove 020899",
+		"LIST_ERROR": "Сталася помилка при завантаженні списку улюбленого.",
+		"LANGUAGE": "Встановлено мову: {0}",
+		"LANGUAGE_ERROR": "Сталася помилка при зміні мови."
+    }
+}
