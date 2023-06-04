@@ -6,7 +6,9 @@ const { search, getAnimeById } = require("./api.js");
 
 async function main() {
     await connectClient();
+    console.log("Client connected");
     const bot = new Telegraf(process.env.TELEGRAM_TOKEN_EDU);
+    console.log("Bot created");
 
     bot.start(async (ctx) => await replyWithLocalizedString(ctx, "GREETING", ctx.from.first_name ? ctx.from.first_name : "User"));
     bot.help(async (ctx) => await replyWithLocalizedString(ctx, "HELP"));
@@ -94,6 +96,8 @@ async function main() {
     });
 
     bot.launch();
+
+    console.log("Bot launched");
 }
 
 main().catch((e) => console.log(e));
