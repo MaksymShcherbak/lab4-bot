@@ -5,6 +5,8 @@ const { digitCount, escape, getCommandArgument, getCommandArgumentId, getLocaliz
 const { search, getAnimeById } = require("./api.js");
 
 async function main() {
+    var ip = require("ip");
+    console.dir(ip.address());
     await connectClient();
     console.log("Client connected");
     const bot = new Telegraf(process.env.TELEGRAM_TOKEN_EDU);
